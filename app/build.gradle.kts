@@ -2,6 +2,11 @@ plugins {
     application
 }
 
+java {
+    withSourcesJar()
+    withJavadocJar()
+}
+
 repositories {
     mavenCentral()
 }
