@@ -1,4 +1,4 @@
-package main;
+package redder.reigns;
 
 /**
  * Enumeration des différents types de jauges

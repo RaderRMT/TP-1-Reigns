@@ -1,4 +1,4 @@
-package main;
+package redder.reigns;
 
 /**
  * Représente un personnage ayant un nom, un genre, et des jauges de Clergé, Peuple, Armée et Finances.

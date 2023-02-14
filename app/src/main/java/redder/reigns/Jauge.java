@@ -1,4 +1,4 @@
-package main;
+package redder.reigns;
 
 /**
  * Représente une jauge avec un nom, une valeur et un type.

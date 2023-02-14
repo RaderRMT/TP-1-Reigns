@@ -1,4 +1,4 @@
-package main;
+package redder.reigns;
 
 /**
  * Représente les différents genres possibles.
