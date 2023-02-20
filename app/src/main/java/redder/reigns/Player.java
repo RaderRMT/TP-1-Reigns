@@ -20,7 +20,7 @@ public class Player {
 
     enum Gender {
         KING("Long règne au roi"),
-        QUEEN("Long règne à la reigne");
+        QUEEN("Long règne à la reine");
 
         private final String longReignText;
 
