@@ -4,7 +4,7 @@ import redder.reigns.gauges.AbstractGauge;
 
 public class MilitaryGauge extends AbstractGauge {
 
-    protected MilitaryGauge() {
+    public MilitaryGauge() {
         super("Military");
     }
 }

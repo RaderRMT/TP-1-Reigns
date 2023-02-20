@@ -2,9 +2,9 @@ package redder.reigns.gauges.impl;
 
 import redder.reigns.gauges.AbstractGauge;
 
-public class ChuchGauge extends AbstractGauge {
+public class ChurchGauge extends AbstractGauge {
 
-    protected ChuchGauge() {
+    public ChurchGauge() {
         super("Church");
     }
 }

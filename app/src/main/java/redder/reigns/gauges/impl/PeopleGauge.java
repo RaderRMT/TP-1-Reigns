@@ -4,7 +4,7 @@ import redder.reigns.gauges.AbstractGauge;
 
 public class PeopleGauge extends AbstractGauge {
 
-    protected PeopleGauge() {
+    public PeopleGauge() {
         super("People");
     }
 }

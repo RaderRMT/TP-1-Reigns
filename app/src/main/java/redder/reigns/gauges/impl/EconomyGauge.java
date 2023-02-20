@@ -4,7 +4,7 @@ import redder.reigns.gauges.AbstractGauge;
 
 public class EconomyGauge extends AbstractGauge {
 
-    protected EconomyGauge() {
+    public EconomyGauge() {
         super("Economy");
     }
 }
