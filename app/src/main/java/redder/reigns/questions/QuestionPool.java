@@ -17,7 +17,7 @@ public final class QuestionPool {
 
     private final List<Question> questions;
 
-    public QuestionPool() {
+    private QuestionPool() {
         this.questions = new ArrayList<>();
     }
 
