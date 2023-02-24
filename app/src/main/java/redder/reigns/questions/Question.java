@@ -1,4 +1,27 @@
 package redder.reigns.questions;
 
-public abstract class AbstractQuestion {
+import redder.reigns.effects.Effect;
+
+import java.util.List;
+
+public class Question {
+
+    private String npcName;
+    private String question;
+    private List<Effect> effects;
+
+    private Question() {
+    }
+
+    public String getNpcName() {
+        return this.npcName;
+    }
+
+    public String getQuestion() {
+        return this.question;
+    }
+
+    public List<Effect> getEffects() {
+        return this.effects;
+    }
 }
