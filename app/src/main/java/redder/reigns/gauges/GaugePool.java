@@ -11,6 +11,8 @@ import java.util.function.Consumer;
 
 public final class GaugePool implements Iterable<AbstractGauge> {
 
+    private static GaugePool instance;
+
     private final List<AbstractGauge> gauges = List.of(
             new ChurchGauge(),
             new EconomyGauge(),
@@ -18,7 +20,7 @@ public final class GaugePool implements Iterable<AbstractGauge> {
             new PeopleGauge()
     );
 
-    public GaugePool() {
+    private GaugePool() {
     }
 
     public boolean hasFilledOrEmptyGauge() {
@@ -37,6 +39,16 @@ public final class GaugePool implements Iterable<AbstractGauge> {
         }
     }
 
+    public AbstractGauge getGaugeByType(GaugeType type) {
+        for (AbstractGauge gauge : this) {
+            if (gauge.getType().equals(type)) {
+                return gauge;
+            }
+        }
+
+        return null;
+    }
+
     @Override
     public Iterator<AbstractGauge> iterator() {
         return this.gauges.iterator();
@@ -45,5 +57,13 @@ public final class GaugePool implements Iterable<AbstractGauge> {
     @Override
     public void forEach(Consumer<? super AbstractGauge> action) {
         this.gauges.forEach(action);
+    }
+
+    public static GaugePool getInstance() {
+        if (instance == null) {
+            instance = new GaugePool();
+        }
+
+        return instance;
     }
 }
