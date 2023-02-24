@@ -6,20 +6,22 @@ public abstract class AbstractGauge {
 
     private static final int DEFAULT_LENGTH = 50;
 
+    private final GaugeType gaugeType;
     private final String name;
     private final int length;
 
     private int value;
 
-    protected AbstractGauge(String name, int length) {
+    protected AbstractGauge(String name, int length, GaugeType gaugeType) {
         this.name = name;
         this.length = length;
+        this.gaugeType = gaugeType;
 
         this.value = startValue();
     }
 
-    protected AbstractGauge(String name) {
-        this(name, DEFAULT_LENGTH);
+    protected AbstractGauge(String name, GaugeType gaugeType) {
+        this(name, DEFAULT_LENGTH, gaugeType);
     }
 
     protected int startValue() {
@@ -41,6 +43,10 @@ public abstract class AbstractGauge {
     // todo: remove
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public GaugeType getType() {
+        return this.gaugeType;
     }
 
     @Override
