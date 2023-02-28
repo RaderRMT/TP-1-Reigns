@@ -6,6 +6,6 @@ import redder.reigns.gauges.GaugeType;
 public class EconomyGauge extends AbstractGauge {
 
     public EconomyGauge() {
-        super("Economy", GaugeType.PEOPLE);
+        super("Economy", GaugeType.ECONOMY);
     }
 }

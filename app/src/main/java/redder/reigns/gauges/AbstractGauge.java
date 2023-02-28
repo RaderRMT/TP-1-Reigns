@@ -40,9 +40,8 @@ public abstract class AbstractGauge {
         return this.length;
     }
 
-    // todo: remove
-    public void setValue(int value) {
-        this.value = value;
+    public void updateValue(int value) {
+        this.value += value;
     }
 
     public GaugeType getType() {

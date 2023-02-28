@@ -6,6 +6,6 @@ import redder.reigns.gauges.GaugeType;
 public class MilitaryGauge extends AbstractGauge {
 
     public MilitaryGauge() {
-        super("Military", GaugeType.PEOPLE);
+        super("Military", GaugeType.MILITARY);
     }
 }

@@ -6,6 +6,6 @@ import redder.reigns.gauges.GaugeType;
 public class ChurchGauge extends AbstractGauge {
 
     public ChurchGauge() {
-        super("Church", GaugeType.PEOPLE);
+        super("Church", GaugeType.CHURCH);
     }
 }
