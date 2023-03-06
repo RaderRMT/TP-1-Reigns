@@ -32,7 +32,7 @@ public class Effect {
         this.strength = strength;
     }
 
-    enum Direction {
+    public enum Direction {
 
         LEFT,
         RIGHT
