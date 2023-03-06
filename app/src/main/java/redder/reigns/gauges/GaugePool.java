@@ -1,10 +1,8 @@
 package redder.reigns.gauges;
 
-import java.util.Iterator;
 import java.util.List;
-import java.util.function.Consumer;
 
-public final class GaugePool implements Iterable<Gauge> {
+public final class GaugePool {
 
     private static GaugePool instance;
 
@@ -19,7 +17,7 @@ public final class GaugePool implements Iterable<Gauge> {
     }
 
     public boolean hasFilledOrEmptyGauge() {
-        for (Gauge gauge : this) {
+        for (Gauge gauge : this.gauges) {
             if (gauge.getValue() <= 0 || gauge.getValue() >= gauge.getLength()) {
                 return true;
             }
@@ -29,29 +27,17 @@ public final class GaugePool implements Iterable<Gauge> {
     }
 
     public void printGauges() {
-        for (Gauge gauge : this) {
-            System.out.println(gauge);
-        }
+        this.gauges.forEach(System.out::println);
     }
 
     public Gauge getGaugeByType(GaugeType type) {
-        for (Gauge gauge : this) {
+        for (Gauge gauge : this.gauges) {
             if (gauge.getType().equals(type)) {
                 return gauge;
             }
         }
 
         return null;
-    }
-
-    @Override
-    public Iterator<Gauge> iterator() {
-        return this.gauges.iterator();
-    }
-
-    @Override
-    public void forEach(Consumer<? super Gauge> action) {
-        this.gauges.forEach(action);
     }
 
     public static GaugePool getInstance() {
