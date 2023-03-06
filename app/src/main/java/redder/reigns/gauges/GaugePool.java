@@ -1,30 +1,25 @@
 package redder.reigns.gauges;
 
-import redder.reigns.gauges.impl.ChurchGauge;
-import redder.reigns.gauges.impl.EconomyGauge;
-import redder.reigns.gauges.impl.MilitaryGauge;
-import redder.reigns.gauges.impl.PeopleGauge;
-
 import java.util.Iterator;
 import java.util.List;
 import java.util.function.Consumer;
 
-public final class GaugePool implements Iterable<AbstractGauge> {
+public final class GaugePool implements Iterable<Gauge> {
 
     private static GaugePool instance;
 
-    private final List<AbstractGauge> gauges = List.of(
-            new ChurchGauge(),
-            new EconomyGauge(),
-            new MilitaryGauge(),
-            new PeopleGauge()
+    private final List<Gauge> gauges = List.of(
+            Gauge.builder(GaugeType.CHURCH).build(),
+            Gauge.builder(GaugeType.ECONOMY).build(),
+            Gauge.builder(GaugeType.MILITARY).build(),
+            Gauge.builder(GaugeType.PEOPLE).build()
     );
 
     private GaugePool() {
     }
 
     public boolean hasFilledOrEmptyGauge() {
-        for (AbstractGauge gauge : this) {
+        for (Gauge gauge : this) {
             if (gauge.getValue() <= 0 || gauge.getValue() >= gauge.getLength()) {
                 return true;
             }
@@ -34,13 +29,13 @@ public final class GaugePool implements Iterable<AbstractGauge> {
     }
 
     public void printGauges() {
-        for (AbstractGauge gauge : this) {
+        for (Gauge gauge : this) {
             System.out.println(gauge);
         }
     }
 
-    public AbstractGauge getGaugeByType(GaugeType type) {
-        for (AbstractGauge gauge : this) {
+    public Gauge getGaugeByType(GaugeType type) {
+        for (Gauge gauge : this) {
             if (gauge.getType().equals(type)) {
                 return gauge;
             }
@@ -50,12 +45,12 @@ public final class GaugePool implements Iterable<AbstractGauge> {
     }
 
     @Override
-    public Iterator<AbstractGauge> iterator() {
+    public Iterator<Gauge> iterator() {
         return this.gauges.iterator();
     }
 
     @Override
-    public void forEach(Consumer<? super AbstractGauge> action) {
+    public void forEach(Consumer<? super Gauge> action) {
         this.gauges.forEach(action);
     }
 
