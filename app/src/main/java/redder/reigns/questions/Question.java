@@ -25,12 +25,9 @@ public class Question {
         return this.effects;
     }
 
-    public void afficheQuestion() {
-        System.out.println("["+this.npcName+"] " + this.question);
-        for (Effect effect : this.effects) {
-            System.out.println("[" + effect.getDirection() + ":" +
-                                     effect.getAffectedGauge() + " " +
-                                     effect.getStrength() + "]");
-        }
+    public void printQuestion() {
+        System.out.println("[" + this.npcName + "] " + this.question);
+
+        this.effects.forEach(System.out::println);
     }
 }
