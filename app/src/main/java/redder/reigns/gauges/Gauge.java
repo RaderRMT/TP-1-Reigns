@@ -1,5 +1,6 @@
 package redder.reigns.gauges;
 
+import redder.reigns.utils.MathUtils;
 import redder.reigns.utils.RandomUtils;
 
 public class Gauge {
@@ -33,12 +34,7 @@ public class Gauge {
 
     public void updateValue(int value) {
         this.value += value;
-        if(this.value < 0){
-            this.value = 0;
-        }
-        if(this.value > this.length){
-            this.value = this.length;
-        }
+        this.value = MathUtils.clamp(this.value, 0, this.length);
     }
 
     public GaugeType getType() {
