@@ -28,7 +28,7 @@ public class Player {
             this.longReignText = longReignText;
         }
 
-        public String longReign() {
+        public String getLongReignText() {
             return this.longReignText;
         }
     }

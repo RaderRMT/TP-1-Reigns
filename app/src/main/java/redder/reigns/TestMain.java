@@ -5,71 +5,56 @@ import redder.reigns.gauges.Gauge;
 import redder.reigns.gauges.GaugePool;
 import redder.reigns.questions.Question;
 import redder.reigns.questions.QuestionPool;
-import redder.reigns.utils.MathUtils;
-
-import java.util.Scanner;
+import redder.reigns.utils.Input;
 
 public class TestMain {
 
-    public TestMain() {
-    }
+    private final QuestionPool questionPool;
+    private final GaugePool gaugePool;
 
-    public static void main(String[] args) {
-        new TestMain().start();
+    private TestMain() {
+        this.questionPool = QuestionPool.getInstance();
+        this.gaugePool = GaugePool.getInstance();
     }
 
     private void start() {
-
         System.out.println("Bienvenue sur Reigns");
-
-        QuestionPool questionPool = QuestionPool.getInstance();
-
         System.out.println("Création du personnage...");
 
         Player player = initPlayer();
 
-        System.out.println(player.getGender().longReign());
-
-        GaugePool gaugePool = GaugePool.getInstance();
-        gaugePool.printGauges();
+        System.out.println(player.getGender().getLongReignText());
 
         int nbTours = 0;
-        while (!gaugePool.hasFilledOrEmptyGauge()) {
+        while (!this.gaugePool.hasFilledOrEmptyGauge()) {
+            this.gaugePool.printGauges();
+
+            showRandomQuestion();
+
             nbTours++;
-            Question question = questionPool.getRandomQuestion();
-            showQuestion(question, gaugePool);
-            gaugePool.printGauges();
         }
+
+        this.gaugePool.printGauges();
 
         System.out.println(
-                player.getName()
-                        + " a perdu ! Son règne a duré "
-                        + nbTours
-                        + " tours");
+                player.getName() + " a perdu ! " +
+                "Son règne a duré " + nbTours + " tours"
+        );
     }
 
-    private void showQuestion(Question question, GaugePool gaugePool) {
-        Effect.Direction[] directions = Effect.Direction.values();
-
+    private void showRandomQuestion() {
+        Question question = this.questionPool.getRandomQuestion();
         question.printQuestion();
-        for (int i = 0; i < directions.length; i++) {
-            System.out.print((i + 1) + " pour " + directions[i]);
 
-            if (i + 1 < directions.length) {
-                System.out.print(", ");
-            }
-        }
+        Effect.Direction[] directions = Effect.Direction.values();
+        printEnumEntries(directions);
 
-        System.out.println();
-
-        Scanner scanner = new Scanner(System.in);
-
-        int answer = MathUtils.clamp(scanner.nextInt(), 1, directions.length);
-        Effect.Direction direction = directions[answer - 1];
+        int answer = Input.readClampedInt(1, directions.length) - 1;
+        Effect.Direction selectedDirection = directions[answer];
 
         question.getEffects()
                 .stream()
-                .filter(effect -> effect.getDirection().equals(direction))
+                .filter(effect -> effect.getDirection().equals(selectedDirection))
                 .forEach(effect -> {
                     Gauge gauge = gaugePool.getGaugeByType(effect.getAffectedGauge());
                     gauge.updateValue(effect.getStrength());
@@ -77,24 +62,32 @@ public class TestMain {
     }
 
     private Player initPlayer() {
-        Scanner scanner = new Scanner(System.in);
         System.out.println("Entrez le nom du personnage: ");
-        System.out.flush();
-        String nom = scanner.nextLine();
+        String nom = Input.readString();
+
+        System.out.println("Comment faut-il vous appeler?");
 
         Player.Gender[] genders = Player.Gender.values();
-        System.out.println("Comment faut-il vous appeler?");
-        for (int i = 0; i < genders.length; i++) {
-            System.out.print((i + 1) + " pour " + genders[i]);
+        printEnumEntries(genders);
 
-            if (i + 1 < genders.length) {
+        int gender = Input.readClampedInt(1, genders.length) - 1;
+        return new Player(nom, genders[gender]);
+    }
+
+    private <T extends Enum<?>> void printEnumEntries(T[] enumeration) {
+        for (int i = 1; i <= enumeration.length; i++) {
+            System.out.print(i + " pour " + enumeration[i - 1]);
+
+            if (i < enumeration.length) {
                 System.out.print(", ");
             }
         }
 
         System.out.println();
+    }
 
-        int genre = MathUtils.clamp(scanner.nextInt(), 1, genders.length);
-        return new Player(nom, genders[genre - 1]);
+    public static void main(String[] args) {
+        TestMain main = new TestMain();
+        main.start();
     }
 }
