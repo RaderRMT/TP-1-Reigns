@@ -32,6 +32,13 @@ public class Effect {
         this.strength = strength;
     }
 
+    @Override
+    public String toString() {
+        return "[" + this.direction + ":" +
+                this.affectedGauge + " " +
+                this.strength + "]";
+    }
+
     public enum Direction {
 
         LEFT,
