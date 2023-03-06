@@ -34,9 +34,9 @@ public class Effect {
 
     @Override
     public String toString() {
-        return "[" + this.direction + ":" +
-                this.affectedGauge + " " +
-                this.strength + "]";
+        return this.direction + ": " +
+                this.affectedGauge.getName() + " (" +
+                this.strength + ")";
     }
 
     public enum Direction {
