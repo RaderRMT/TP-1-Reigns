@@ -17,13 +17,8 @@ public final class GaugePool {
     }
 
     public boolean hasFilledOrEmptyGauge() {
-        for (Gauge gauge : this.gauges) {
-            if (gauge.getValue() <= 0 || gauge.getValue() >= gauge.getLength()) {
-                return true;
-            }
-        }
-
-        return false;
+        return this.gauges.stream()
+                .anyMatch(gauge -> gauge.getValue() <= 0 || gauge.getValue() >= gauge.getLength());
     }
 
     public void printGauges() {
@@ -31,13 +26,10 @@ public final class GaugePool {
     }
 
     public Gauge getGaugeByType(GaugeType type) {
-        for (Gauge gauge : this.gauges) {
-            if (gauge.getType().equals(type)) {
-                return gauge;
-            }
-        }
-
-        return null;
+        return this.gauges.stream()
+                .filter(gauge -> gauge.getType().equals(type))
+                .findFirst()
+                .orElse(null);
     }
 
     public static GaugePool getInstance() {
