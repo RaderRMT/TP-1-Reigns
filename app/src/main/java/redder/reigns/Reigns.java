@@ -38,7 +38,7 @@ public final class Reigns {
 
         System.out.println(
                 player.getName() + " a perdu ! " +
-                        "Son règne a duré " + nbTours + " tours"
+                "Son règne a duré " + nbTours + " tours"
         );
     }
 
