@@ -1,5 +1,7 @@
 plugins {
     application
+
+    id("com.github.johnrengelman.shadow") version "7.0.0"
 }
 
 java {
