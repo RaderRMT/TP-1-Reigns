@@ -5,6 +5,7 @@ import redder.reigns.gauges.Gauge;
 import redder.reigns.gauges.GaugePool;
 import redder.reigns.questions.Question;
 import redder.reigns.questions.QuestionPool;
+import redder.reigns.utils.MathUtils;
 
 import java.util.Scanner;
 
@@ -33,10 +34,10 @@ public class TestMain {
         gaugePool.printGauges();
 
         int nbTours = 0;
-        while(!gaugePool.hasFilledOrEmptyGauge()) {
+        while (!gaugePool.hasFilledOrEmptyGauge()) {
             nbTours++;
             Question question = questionPool.getRandomQuestion();
-            reponseQuestion(question, gaugePool);
+            showQuestion(question, gaugePool);
             gaugePool.printGauges();
         }
 
@@ -47,24 +48,33 @@ public class TestMain {
                         + " tours");
     }
 
-    private void reponseQuestion(Question question, GaugePool gaugePool) {
-        question.afficheQuestion();
+    private void showQuestion(Question question, GaugePool gaugePool) {
+        Effect.Direction[] directions = Effect.Direction.values();
 
-        for (int i = 0; i < Effect.Direction.values().length; i++) {
-            System.out.print((i + 1) + " pour " + Effect.Direction.values()[i] + "\n");
-        }
+        question.printQuestion();
+        for (int i = 0; i < directions.length; i++) {
+            System.out.print((i + 1) + " pour " + directions[i]);
 
-        Scanner scanner = new Scanner(System.in);
-        int reponse = scanner.nextInt();
-        for (Effect effect : question.getEffects()) {
-            if (effect.getDirection() == Effect.Direction.values()[reponse-1]) {
-                Gauge gauge = gaugePool.getGaugeByType(effect.getAffectedGauge());
-                gauge.updateValue(effect.getStrength());
+            if (i + 1 < directions.length) {
+                System.out.print(", ");
             }
         }
+
+        System.out.println();
+
+        Scanner scanner = new Scanner(System.in);
+
+        int answer = MathUtils.clamp(scanner.nextInt(), 1, directions.length);
+        Effect.Direction direction = directions[answer - 1];
+
+        question.getEffects()
+                .stream()
+                .filter(effect -> effect.getDirection().equals(direction))
+                .forEach(effect -> {
+                    Gauge gauge = gaugePool.getGaugeByType(effect.getAffectedGauge());
+                    gauge.updateValue(effect.getStrength());
+                });
     }
-
-
 
     private Player initPlayer() {
         Scanner scanner = new Scanner(System.in);
@@ -72,11 +82,19 @@ public class TestMain {
         System.out.flush();
         String nom = scanner.nextLine();
 
+        Player.Gender[] genders = Player.Gender.values();
         System.out.println("Comment faut-il vous appeler?");
-        for (int i = 0; i < Player.Gender.values().length; i++) {
-            System.out.print((i + 1) + " pour " + Player.Gender.values()[i] + ", ");
+        for (int i = 0; i < genders.length; i++) {
+            System.out.print((i + 1) + " pour " + genders[i]);
+
+            if (i + 1 < genders.length) {
+                System.out.print(", ");
+            }
         }
-        int genre = scanner.nextInt();
-        return new Player(nom, Player.Gender.values()[genre-1]);
+
+        System.out.println();
+
+        int genre = MathUtils.clamp(scanner.nextInt(), 1, genders.length);
+        return new Player(nom, genders[genre - 1]);
     }
 }
