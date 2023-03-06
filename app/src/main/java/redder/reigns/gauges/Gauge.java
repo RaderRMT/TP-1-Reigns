@@ -33,6 +33,12 @@ public class Gauge {
 
     public void updateValue(int value) {
         this.value += value;
+        if(this.value < 0){
+            this.value = 0;
+        }
+        if(this.value > this.length){
+            this.value = this.length;
+        }
     }
 
     public GaugeType getType() {
