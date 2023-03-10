@@ -9,10 +9,18 @@ public enum GaugeType {
 
     private final String name;
 
+    /**
+     * Create a new gauge type
+     *
+     * @param name  The gauge's display name
+     */
     GaugeType(String name) {
         this.name = name;
     }
 
+    /**
+     * @return  The gauge name
+     */
     public String getName() {
         return this.name;
     }

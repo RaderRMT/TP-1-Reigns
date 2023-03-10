@@ -8,28 +8,28 @@ public class Effect {
     private GaugeType affectedGauge;
     private int strength;
 
+    private Effect() {
+    }
+
+    /**
+     * @return  The effect's direction
+     */
     public Direction getDirection() {
         return this.direction;
     }
 
-    public void setDirection(Direction direction) {
-        this.direction = direction;
-    }
-
+    /**
+     * @return  The gauge type this effect will affect
+     */
     public GaugeType getAffectedGauge() {
         return this.affectedGauge;
     }
 
-    public void setAffectedGauge(GaugeType affectedGauge) {
-        this.affectedGauge = affectedGauge;
-    }
-
+    /**
+     * @return  The effect's strength
+     */
     public int getStrength() {
         return this.strength;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
     }
 
     @Override

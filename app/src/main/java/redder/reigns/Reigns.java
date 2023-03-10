@@ -17,6 +17,15 @@ public final class Reigns {
         this.gaugePool = GaugePool.getInstance();
     }
 
+
+    /**
+     * Initialize the player then enter the main game loop.
+     * We only exit the game loop if one of the gauge is
+     * either completely empty or completely full
+     *
+     * @see Player
+     * @see Gauge
+     */
     private void start() {
         System.out.println("Bienvenue sur Reigns");
         System.out.println("Création du personnage...");
@@ -42,14 +51,23 @@ public final class Reigns {
         );
     }
 
+    /**
+     * Print a random question from the question pool, wait for the user
+     * to enter a direction and apply the effects from the direction to the gauges
+     *
+     * @see Question
+     * @see QuestionPool
+     * @see Effect
+     * @see Effect.Direction
+     * @see Gauge
+     */
     private void showRandomQuestion() {
         Question question = this.questionPool.getRandomQuestion();
         question.printQuestion();
 
         Effect.Direction[] directions = Effect.Direction.values();
-        printEnumEntries(directions);
+        int answer = getInputIndexFromArray(directions);
 
-        int answer = Input.readClampedInt(1, directions.length) - 1;
         Effect.Direction selectedDirection = directions[answer];
 
         question.getEffects()
@@ -61,6 +79,13 @@ public final class Reigns {
                 });
     }
 
+    /**
+     * Ask the user a few questions to create its player instance
+     *
+     * @return  The new player instance
+     * @see     Player
+     * @see     Player.Gender
+     */
     private Player initPlayer() {
         System.out.println("Entrez le nom du personnage: ");
         String nom = Input.readString();
@@ -68,22 +93,35 @@ public final class Reigns {
         System.out.println("Comment faut-il vous appeler?");
 
         Player.Gender[] genders = Player.Gender.values();
-        printEnumEntries(genders);
+        int gender = getInputIndexFromArray(genders);
 
-        int gender = Input.readClampedInt(1, genders.length) - 1;
         return new Player(nom, genders[gender]);
     }
 
-    private <T extends Enum<?>> void printEnumEntries(T[] enumeration) {
-        for (int i = 1; i <= enumeration.length; i++) {
-            System.out.print(i + " pour " + enumeration[i - 1]);
+    /**
+     * Print the given list's values with it's associated index
+     * and wait for the user to enter a number before returning.
+     *
+     * <p>The return value will be clamped between 0 and the length
+     * of the array minus one
+     *
+     * @param array The values to print
+     * @return      The selected entry index
+     */
+    private int getInputIndexFromArray(Object[] array) {
+        int arrayLength = array.length;
 
-            if (i < enumeration.length) {
+        for (int i = 1; i <= arrayLength; i++) {
+            System.out.print(i + " pour " + array[i - 1]);
+
+            if (i < arrayLength) {
                 System.out.print(", ");
             }
         }
 
         System.out.println();
+
+        return Input.readClampedInt(1, arrayLength) - 1;
     }
 
     public static void main(String[] args) {
