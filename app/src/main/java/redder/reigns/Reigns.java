@@ -69,14 +69,7 @@ public final class Reigns {
         int answer = Input.getUserInputIndexFromArray(directions);
 
         Effect.Direction selectedDirection = directions[answer];
-
-        question.getEffects()
-                .stream()
-                .filter(effect -> effect.getDirection().equals(selectedDirection))
-                .forEach(effect -> {
-                    Gauge gauge = gaugePool.getGaugeByType(effect.getAffectedGauge());
-                    gauge.updateValue(effect.getStrength());
-                });
+        question.applyEffects(selectedDirection);
     }
 
     /**

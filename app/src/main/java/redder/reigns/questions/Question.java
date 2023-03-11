@@ -1,6 +1,8 @@
 package redder.reigns.questions;
 
 import redder.reigns.effects.Effect;
+import redder.reigns.gauges.Gauge;
+import redder.reigns.gauges.GaugePool;
 
 import java.util.List;
 
@@ -29,9 +31,27 @@ public class Question {
 
     /**
      * @return  The effects associated with this question
+     * @see Effect
      */
     public List<Effect> getEffects() {
         return this.effects;
+    }
+
+    /**
+     * Apply the effect from the given directions to the gauges
+     *
+     * @param selectedDirection The direction
+     * @see Gauge
+     * @see Effect
+     * @see Effect.Direction
+     */
+    public void applyEffects(Effect.Direction selectedDirection) {
+        this.effects.stream()
+                .filter(effect -> effect.getDirection().equals(selectedDirection))
+                .forEach(effect -> {
+                    Gauge gauge = GaugePool.getInstance().getGaugeByType(effect.getAffectedGauge());
+                    gauge.updateValue(effect.getStrength());
+                });
     }
 
     /**
