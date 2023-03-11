@@ -66,7 +66,7 @@ public final class Reigns {
         question.printQuestion();
 
         Effect.Direction[] directions = Effect.Direction.values();
-        int answer = getInputIndexFromArray(directions);
+        int answer = Input.getUserInputIndexFromArray(directions);
 
         Effect.Direction selectedDirection = directions[answer];
 
@@ -93,35 +93,9 @@ public final class Reigns {
         System.out.println("Comment faut-il vous appeler?");
 
         Player.Gender[] genders = Player.Gender.values();
-        int gender = getInputIndexFromArray(genders);
+        int gender = Input.getUserInputIndexFromArray(genders);
 
         return new Player(nom, genders[gender]);
-    }
-
-    /**
-     * Print the given list's values with it's associated index
-     * and wait for the user to enter a number before returning.
-     *
-     * <p>The return value will be clamped between 0 and the length
-     * of the array minus one
-     *
-     * @param array The values to print
-     * @return      The selected entry index
-     */
-    private int getInputIndexFromArray(Object[] array) {
-        int arrayLength = array.length;
-
-        for (int i = 1; i <= arrayLength; i++) {
-            System.out.print(i + " pour " + array[i - 1]);
-
-            if (i < arrayLength) {
-                System.out.print(", ");
-            }
-        }
-
-        System.out.println();
-
-        return Input.readClampedInt(1, arrayLength) - 1;
     }
 
     public static void main(String[] args) {

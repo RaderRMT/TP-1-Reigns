@@ -1,6 +1,9 @@
 package redder.reigns.utils;
 
+import java.util.Arrays;
 import java.util.Scanner;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 public class Input {
 
@@ -35,6 +38,28 @@ public class Input {
      */
     public static int readInt() {
         return scanner.nextInt();
+    }
+
+    /**
+     * Print the given list's values with it's associated index
+     * and wait for the user to enter a number before returning.
+     *
+     * <p>The return value will be clamped between 0 and the length
+     * of the array minus one
+     *
+     * @param array The values to print
+     * @return      The selected entry index
+     */
+    public static int getUserInputIndexFromArray(Object[] array) {
+        // we need an atomic integer so we can update it in the stream map
+        AtomicInteger index = new AtomicInteger();
+        System.out.println(
+                Arrays.stream(array)
+                        .map(elem -> index.incrementAndGet() + " pour " + elem)
+                        .collect(Collectors.joining(", "))
+        );
+
+        return Input.readClampedInt(1, array.length) - 1;
     }
 
     static {
