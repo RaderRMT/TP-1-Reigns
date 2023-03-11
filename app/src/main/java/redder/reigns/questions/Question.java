@@ -3,6 +3,7 @@ package redder.reigns.questions;
 import redder.reigns.effects.Effect;
 import redder.reigns.gauges.Gauge;
 import redder.reigns.gauges.GaugePool;
+import redder.reigns.localization.I18n;
 
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class Question {
      * @return  The question string associated with this question
      */
     public String getQuestion() {
-        return this.question;
+        return I18n.get(this.question);
     }
 
     /**
@@ -58,7 +59,7 @@ public class Question {
      * Print the question to the standard output
      */
     public void printQuestion() {
-        System.out.println("[" + this.npcName + "] " + this.question);
+        System.out.println("[" + this.npcName + "] " + getQuestion());
 
         this.effects.forEach(System.out::println);
     }
