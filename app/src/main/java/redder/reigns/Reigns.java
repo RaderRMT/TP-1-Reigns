@@ -17,7 +17,6 @@ public final class Reigns {
         this.gaugePool = GaugePool.getInstance();
     }
 
-
     /**
      * Initialize the player then enter the main game loop.
      * We only exit the game loop if one of the gauge is
@@ -28,7 +27,6 @@ public final class Reigns {
      */
     private void start() {
         System.out.println("Bienvenue sur Reigns");
-        System.out.println("Création du personnage...");
 
         Player player = initPlayer();
 
@@ -80,6 +78,7 @@ public final class Reigns {
      * @see     Player.Gender
      */
     private Player initPlayer() {
+        System.out.println("Création du personnage...");
         System.out.println("Entrez le nom du personnage: ");
         String nom = Input.readString();
 
