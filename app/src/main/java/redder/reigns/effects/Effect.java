@@ -1,5 +1,6 @@
 package redder.reigns.effects;
 
+import redder.reigns.IDisplayable;
 import redder.reigns.gauges.GaugeType;
 
 public class Effect {
@@ -39,9 +40,23 @@ public class Effect {
                 this.strength + ")";
     }
 
-    public enum Direction {
+    public enum Direction implements IDisplayable {
 
-        LEFT,
-        RIGHT
+        LEFT("Gauche"),
+        RIGHT("Droite");
+
+        private final String displayName;
+
+        Direction(String displayName) {
+            this.displayName = displayName;
+        }
+
+        /**
+         * @return The element's display name
+         */
+        @Override
+        public String getDisplayName() {
+            return this.displayName;
+        }
     }
 }

@@ -30,14 +30,16 @@ public class Player {
         return this.gender;
     }
 
-    enum Gender {
+    public enum Gender implements IDisplayable {
 
-        KING("Long règne au roi"),
-        QUEEN("Long règne à la reine");
+        KING("Roi", "Long règne au roi"),
+        QUEEN("Reine", "Long règne à la reine");
 
+        private final String displayName;
         private final String longReignText;
 
-        Gender(String longReignText) {
+        Gender(String displayName, String longReignText) {
+            this.displayName = displayName;
             this.longReignText = longReignText;
         }
 
@@ -46,6 +48,14 @@ public class Player {
          */
         public String getLongReignText() {
             return this.longReignText;
+        }
+
+        /**
+         * @return The element's display name
+         */
+        @Override
+        public String getDisplayName() {
+            return this.displayName;
         }
     }
 }

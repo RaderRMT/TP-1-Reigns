@@ -1,5 +1,7 @@
 package redder.reigns.utils;
 
+import redder.reigns.IDisplayable;
+
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -50,12 +52,12 @@ public class Input {
      * @param array The values to print
      * @return      The selected entry index
      */
-    public static int getUserInputIndexFromArray(Object[] array) {
+    public static <T extends IDisplayable> int getUserInputIndexFromArray(T[] array) {
         // we need an atomic integer so we can update it in the stream map
         AtomicInteger index = new AtomicInteger();
         System.out.println(
                 Arrays.stream(array)
-                        .map(elem -> index.incrementAndGet() + " pour " + elem)
+                        .map(elem -> index.incrementAndGet() + " pour " + elem.getDisplayName())
                         .collect(Collectors.joining(", "))
         );
 
