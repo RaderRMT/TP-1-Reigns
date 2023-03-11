@@ -1,5 +1,7 @@
 package redder.reigns;
 
+import redder.reigns.localization.I18n;
+
 public class Player {
 
     private final String name;
@@ -32,8 +34,8 @@ public class Player {
 
     public enum Gender implements IDisplayable {
 
-        KING("Roi", "Long règne au roi"),
-        QUEEN("Reine", "Long règne à la reine");
+        KING("player.gender.king", "player.gender.king.text"),
+        QUEEN("player.gender.queen", "player.gender.queen.text");
 
         private final String displayName;
         private final String longReignText;
@@ -47,7 +49,7 @@ public class Player {
          * @return  A string depending on the player's gender
          */
         public String getLongReignText() {
-            return this.longReignText;
+            return I18n.get(this.longReignText);
         }
 
         /**
@@ -55,7 +57,7 @@ public class Player {
          */
         @Override
         public String getDisplayName() {
-            return this.displayName;
+            return I18n.get(this.displayName);
         }
     }
 }

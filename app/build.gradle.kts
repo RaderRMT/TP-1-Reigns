@@ -15,6 +15,7 @@ repositories {
 
 dependencies {
     implementation("com.google.code.gson:gson:2.8.9")
+    implementation("commons-cli:commons-cli:1.3.1")
 }
 
 application {

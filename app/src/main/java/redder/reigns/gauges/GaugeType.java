@@ -1,11 +1,13 @@
 package redder.reigns.gauges;
 
+import redder.reigns.localization.I18n;
+
 public enum GaugeType {
 
-    CHURCH("Church"),
-    PEOPLE("People"),
-    MILITARY("Military"),
-    ECONOMY("Economy");
+    CHURCH("gaugetype.church"),
+    PEOPLE("gaugetype.people"),
+    MILITARY("gaugetype.military"),
+    ECONOMY("gaugetype.economy");
 
     private final String name;
 
@@ -22,6 +24,6 @@ public enum GaugeType {
      * @return  The gauge name
      */
     public String getName() {
-        return this.name;
+        return I18n.get(this.name);
     }
 }

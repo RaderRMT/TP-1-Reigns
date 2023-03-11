@@ -1,8 +1,10 @@
 package redder.reigns;
 
+import org.apache.commons.cli.*;
 import redder.reigns.effects.Effect;
 import redder.reigns.gauges.Gauge;
 import redder.reigns.gauges.GaugePool;
+import redder.reigns.localization.I18n;
 import redder.reigns.questions.Question;
 import redder.reigns.questions.QuestionPool;
 import redder.reigns.utils.Input;
@@ -26,7 +28,7 @@ public final class Reigns {
      * @see Gauge
      */
     private void start() {
-        System.out.println("Bienvenue sur Reigns");
+        I18n.print("reigns.welcome");
 
         Player player = initPlayer();
 
@@ -43,10 +45,7 @@ public final class Reigns {
 
         this.gaugePool.printGauges();
 
-        System.out.println(
-                player.getName() + " a perdu ! " +
-                "Son règne a duré " + nbTours + " tours"
-        );
+        I18n.printFormat("reigns.lost", player.getName(), nbTours);
     }
 
     /**
@@ -78,11 +77,11 @@ public final class Reigns {
      * @see     Player.Gender
      */
     private Player initPlayer() {
-        System.out.println("Création du personnage...");
-        System.out.println("Entrez le nom du personnage: ");
+        I18n.print("reigns.player.creation");
+        I18n.print("reigns.player.creation.playername");
         String nom = Input.readString();
 
-        System.out.println("Comment faut-il vous appeler?");
+        I18n.print("reigns.player.creation.calling");
 
         Player.Gender[] genders = Player.Gender.values();
         int gender = Input.getUserInputIndexFromArray(genders);
@@ -91,6 +90,26 @@ public final class Reigns {
     }
 
     public static void main(String[] args) {
+        Options options = new Options();
+
+        Option lang = new Option("l", "lang", true, "Change the game's language");
+        options.addOption(lang);
+
+        CommandLineParser parser = new DefaultParser();
+        HelpFormatter formatter = new HelpFormatter();
+
+        CommandLine cmd = null;
+        try {
+            cmd = parser.parse(options, args);
+        } catch (ParseException e) {
+            System.out.println(e.getMessage());
+            formatter.printHelp("Reigns", options);
+
+            System.exit(1);
+        }
+
+        I18n.setLang(cmd.getOptionValue('l', "fr_FR"));
+
         Reigns main = new Reigns();
         main.start();
     }

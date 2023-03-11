@@ -1,6 +1,7 @@
 package redder.reigns.utils;
 
 import redder.reigns.IDisplayable;
+import redder.reigns.localization.I18n;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -57,7 +58,7 @@ public class Input {
         AtomicInteger index = new AtomicInteger();
         System.out.println(
                 Arrays.stream(array)
-                        .map(elem -> index.incrementAndGet() + " pour " + elem.getDisplayName())
+                        .map(elem -> I18n.format("input.for", index.incrementAndGet(), elem.getDisplayName()))
                         .collect(Collectors.joining(", "))
         );
 
