@@ -1,11 +1,9 @@
 package redder.reigns.questions;
 
-import com.google.gson.Gson;
+import redder.reigns.ConfigReader;
 import redder.reigns.utils.OS;
 import redder.reigns.utils.RandomUtils;
 
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,11 +36,7 @@ public final class QuestionPool {
      */
     public static QuestionPool getInstance() {
         if (instance == null) {
-            try (FileReader reader = new FileReader(CONFIG_FILE_PATH)) {
-                instance = new Gson().fromJson(reader, QuestionPool.class);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            instance = ConfigReader.read(QuestionPool.class, CONFIG_FILE_PATH);
         }
 
         return instance;

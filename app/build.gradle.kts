@@ -22,6 +22,10 @@ application {
     mainClass.set("redder.reigns.Reigns")
 }
 
+tasks.named<JavaExec>("run") {
+    standardInput = System.`in`
+}
+
 tasks.withType<Jar> {
     manifest {
         attributes["Main-Class"] = "redder.reigns.Reigns"
