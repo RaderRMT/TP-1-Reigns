@@ -18,15 +18,10 @@ public final class GaugePool {
 
     /**
      * @return  true if at least one gauge is either empty of full
-     *
      * @see Gauge
      */
     public boolean hasFilledOrEmptyGauge() {
-        return this.gauges.stream()
-                .anyMatch(
-                        gauge -> gauge.getValue() <= 0 ||
-                        gauge.getValue() >= gauge.getLength()
-                );
+        return this.gauges.stream().anyMatch(Gauge::isFullOrEmpty);
     }
 
     /**

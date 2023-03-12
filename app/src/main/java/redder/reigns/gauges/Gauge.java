@@ -54,6 +54,13 @@ public class Gauge {
     }
 
     /**
+     * @return  true if the gauge is either empty of full
+     */
+    public boolean isFullOrEmpty() {
+        return getValue() <= 0 || getValue() >= getLength();
+    }
+
+    /**
      * @return  The gauge type
      * @see GaugeType
      */
