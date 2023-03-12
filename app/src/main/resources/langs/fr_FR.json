@@ -8,9 +8,9 @@
     "reigns.player.creation.calling": "Comment faut-il vous appeler?",
 
     "player.gender.king": "Roi",
-    "player.gender.king.text": "Long règne au roi",
+    "player.gender.king.text": "Long règne au Roi",
     "player.gender.queen": "Reine",
-    "player.gender.queen.text": "Long règne au roi",
+    "player.gender.queen.text": "Long règne à la Reine",
 
     "input.for": "%d pour %s",
 
@@ -22,6 +22,20 @@
     "effect.left": "Gauche",
     "effect.right": "Droite",
 
-    "question1.text" : "Voulez vous offrir ce paysan en sacrifice"
+    "question1.text" : "Voulez vous offrir ce paysan en sacrifice ?   \nGauche: oui, droite: non",
+    "question2.text" : "Voulez vous augmenter le prix de ventes des légumes du royaume ?   \nGauche: oui, droite: non",
+    "question3.text" : "Voulez vous enroler une vingtaine de jeunes hommes dans l'armée ?   \nGauche: oui, droite: non",
+    "question4.text" : "Voulez vous mettre en place un système de vote pour répondre aux besoins des villageois ?   \nGauche: oui, droite: non",
+    "question5.text" : "Voulez vous faire des travaux d'agrandissement de l'église ?   \nGauche: oui, droite: non",
+    "question6.text" : "Voulez vous augmenter la taxe sur le loyer ?   \nGauche: oui, droite: non",
+    "question7.text" : "Voulez vous acheter de nouvelles armes auprès d'autres Royaumes ?   \nGauche: oui, droite: non",
+    "question8.text" : "Voulez vous créer un parc pour le peuple ?   \nGauche: oui, droite: non",
+    "question9.text" : "Voulez vous avancer l'âge de départ des soldats à la retraite ?   \nGauche: oui, droite: non",
+    "question10.text" : "Le prêtre a goûté le pain de la boulangère. Il est beaucoup trop bon pour ne pas être le fruit de sorcellerie : faut-il brûler la boulangère ?   \nGauche: oui, droite: non",
+    "question11.text" : "Faut-il construire une nouvelle église ?   Gauche: oui, droite: non",
+    "question12.text" : "Faut-il ériger une statue à votre effigie ?   Gauche: oui, droite: non",
+    "question13.text" : "Vous recevez une missive du Pape, il vous missionne de partir en croisade afin de purifier les terres hérétiques : Acceptez-vous sa requête ?   \nGauche: oui, droite: non",
+    "question14.text" : "Votre fourbe conseiller vous approche et vous susure une idée : Construire les églises en bois ça couterait quand même moins cher !   \nGauche: Accepter, droite: Refuser",
+    "question15.text" : "Un mystérieux voyageur se présente à vous. Vêtue d'une longue cape et d'une capuche masquant son visage ; il vous fait une démonstration de ses pouvoirs télékinésique.\n Il vous propose de former certaines personnes de votre Royaume afin d'améliorer votre armée. Mais le Clergé voit son arrivée d'un mauvais oeil, considérant ses pouvoirs comme démoniaques. \nGauche: oui, droite: non"
   }
 }

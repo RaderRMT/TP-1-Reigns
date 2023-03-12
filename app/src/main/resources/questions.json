@@ -1,8 +1,86 @@
 {
   "questions": [
     {
-      "npcName": "Red",
+      "npcName": "Groma Langue de Baleine",
       "question": "question1.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "CHURCH",
+          "strength": 10
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "PEOPLE",
+          "strength": -7
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "PEOPLE",
+          "strength": 10
+        }
+      ]
+    },
+    {
+      "npcName": "Vegeta, Prince des légumes",
+      "question": "question2.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ECONOMY",
+          "strength": 8
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "PEOPLE",
+          "strength": -8
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "PEOPLE",
+          "strength": 8
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "ECONOMY",
+          "strength": -8
+        }
+      ]
+    },
+    {
+      "npcName": "Le chef des armées",
+      "question": "question3.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ARMY",
+          "strength": 7
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ECONOMY",
+          "strength": 5
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "PEOPLE",
+          "strength": -15
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "PEOPLE",
+          "strength": 7
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "ARMY",
+          "strength": -7
+        }
+      ]
+    },
+    {
+      "npcName": "Conseiller",
+      "question": "question4.text",
       "effects": [
         {
           "direction": "LEFT",
@@ -11,13 +89,269 @@
         },
         {
           "direction": "RIGHT",
+          "affectedGauge": "PEOPLE",
+          "strength": -10
+        }
+      ]
+    },
+    {
+      "npcName": "Conseiller",
+      "question": "question5.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ECONOMY",
+          "strength": -7
+        },
+        {
+          "direction": "LEFT",
           "affectedGauge": "CHURCH",
           "strength": 10
         },
         {
           "direction": "RIGHT",
+          "affectedGauge": "CHURCH",
+          "strength": -10
+        }
+      ]
+    },
+    {
+      "npcName": "Conseiller",
+      "question": "question6.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "PEOPLE",
+          "strength": -11
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ECONOMY",
+          "strength": 7
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "PEOPLE",
+          "strength": 11
+        },
+        {
+          "direction": "RIGHT",
           "affectedGauge": "PEOPLE",
           "strength": -7
+        }
+      ]
+    },
+    {
+      "npcName": "Conseiller",
+      "question": "question7.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ECONOMY",
+          "strength": -15
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ARMY",
+          "strength": 11
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "ARMY",
+          "strength": -5
+        }
+      ]
+    },
+    {
+      "npcName": "Peuple",
+      "question": "question8.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "PEOPLE",
+          "strength": 4
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ECONOMY",
+          "strength": -7
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "PEOPLE",
+          "strength": -7
+        }
+      ]
+    },
+    {
+      "npcName": "Conseiller",
+      "question": "question9.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "PEOPLE",
+          "strength": 15
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ARMY",
+          "strength": -12
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ECONOMY",
+          "strength": -7
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "PEOPLE",
+          "strength": -7
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "ARMY",
+          "strength": 7
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "ECONOMY",
+          "strength": 10
+        }
+      ]
+    },
+    {
+      "npcName": "Le prêtre",
+      "question": "question10.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "CHURCH",
+          "strength": 15
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "PEOPLE",
+          "strength": -7
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "CHURCH",
+          "strength": -10
+        }
+      ]
+    },
+    {
+      "npcName": "Conseiller",
+      "question": "question11.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "CHURCH",
+          "strength": 7
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ECONOMY",
+          "strength": -10
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "CHURCH",
+          "strength": -7
+        }
+      ]
+    },
+    {
+      "npcName": "Votre Ego",
+      "question": "question12.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ECONOMY",
+          "strength": -10
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "PEOPLE",
+          "strength": 7
+        }
+      ]
+    },
+    {
+      "npcName": "Le Pape",
+      "question": "question13.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "CHURCH",
+          "strength": 20
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ARMY",
+          "strength": -17
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "CHURCH",
+          "strength": -27
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "ECONOMY",
+          "strength": 10
+        }
+      ]
+    },
+    {
+      "npcName": "Le Fourbe",
+      "question": "question14.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ECONOMY",
+          "strength": 9
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "CHURCH",
+          "strength": -10
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "ECONOMY",
+          "strength": -7
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "CHURCH",
+          "strength" : 8
+        }
+      ]
+    },
+    {
+      "npcName": "Obiwan Kenobi",
+      "question": "question15.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ARMY",
+          "strength": 18
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "CHURCH",
+          "strength": -17
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "ARMY",
+          "strength": -7
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "CHURCH",
+          "strength": 10
         }
       ]
     }
