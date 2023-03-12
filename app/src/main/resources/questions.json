@@ -53,7 +53,7 @@
       "effects": [
         {
           "direction": "LEFT",
-          "affectedGauge": "ARMY",
+          "affectedGauge": "MILITARY",
           "strength": 7
         },
         {
@@ -73,7 +73,7 @@
         },
         {
           "direction": "RIGHT",
-          "affectedGauge": "ARMY",
+          "affectedGauge": "MILITARY",
           "strength": -7
         }
       ]
@@ -152,12 +152,12 @@
         },
         {
           "direction": "LEFT",
-          "affectedGauge": "ARMY",
+          "affectedGauge": "MILITARY",
           "strength": 11
         },
         {
           "direction": "RIGHT",
-          "affectedGauge": "ARMY",
+          "affectedGauge": "MILITARY",
           "strength": -5
         }
       ]
@@ -194,7 +194,7 @@
         },
         {
           "direction": "LEFT",
-          "affectedGauge": "ARMY",
+          "affectedGauge": "MILITARY",
           "strength": -12
         },
         {
@@ -209,7 +209,7 @@
         },
         {
           "direction": "RIGHT",
-          "affectedGauge": "ARMY",
+          "affectedGauge": "MILITARY",
           "strength": 7
         },
         {
@@ -288,7 +288,7 @@
         },
         {
           "direction": "LEFT",
-          "affectedGauge": "ARMY",
+          "affectedGauge": "MILITARY",
           "strength": -17
         },
         {
@@ -335,7 +335,7 @@
       "effects": [
         {
           "direction": "LEFT",
-          "affectedGauge": "ARMY",
+          "affectedGauge": "MILITARY",
           "strength": 18
         },
         {
@@ -345,13 +345,29 @@
         },
         {
           "direction": "RIGHT",
-          "affectedGauge": "ARMY",
+          "affectedGauge": "MILITARY",
           "strength": -7
         },
         {
           "direction": "RIGHT",
           "affectedGauge": "CHURCH",
           "strength": 10
+        }
+      ]
+    },
+    {
+      "npcName": "Pierre",
+      "question": "question16.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "PEOPLE",
+          "strength": 9
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "PEOPLE",
+          "strength": -16
         }
       ]
     }

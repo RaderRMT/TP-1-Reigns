@@ -36,6 +36,7 @@
     "question12.text" : "Faut-il ériger une statue à votre effigie ?   Gauche: oui, droite: non",
     "question13.text" : "Vous recevez une missive du Pape, il vous missionne de partir en croisade afin de purifier les terres hérétiques : Acceptez-vous sa requête ?   \nGauche: oui, droite: non",
     "question14.text" : "Votre fourbe conseiller vous approche et vous susure une idée : Construire les églises en bois ça couterait quand même moins cher !   \nGauche: Accepter, droite: Refuser",
-    "question15.text" : "Un mystérieux voyageur se présente à vous. Vêtue d'une longue cape et d'une capuche masquant son visage ; il vous fait une démonstration de ses pouvoirs télékinésique.\n Il vous propose de former certaines personnes de votre Royaume afin d'améliorer votre armée. Mais le Clergé voit son arrivée d'un mauvais oeil, considérant ses pouvoirs comme démoniaques. \nGauche: oui, droite: non"
+    "question15.text" : "Un mystérieux voyageur se présente à vous. Vêtue d'une longue cape et d'une capuche masquant son visage ; il vous fait une démonstration de ses pouvoirs télékinésique.\n Il vous propose de former certaines personnes de votre Royaume afin d'améliorer votre armée. Mais le Clergé voit son arrivée d'un mauvais oeil, considérant ses pouvoirs comme démoniaques. \nGauche: oui, droite: non",
+    "question16.text" : "Vous connaissez ma femme?\nGauche: oui chef, droite: non chef"
   }
 }
