@@ -1,0 +1,25 @@
+{
+  "questions": [
+    {
+      "npcName": "Red",
+      "question": "question1.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "PEOPLE",
+          "strength": 10
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "CHURCH",
+          "strength": 10
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "PEOPLE",
+          "strength": -7
+        }
+      ]
+    }
+  ]
+}

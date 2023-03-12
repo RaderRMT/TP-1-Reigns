@@ -1,0 +1,27 @@
+{
+  "texts": {
+    "reigns.welcome": "Bienvenue sur Reigns",
+    "reigns.lost": "%s a perdu ! Son règne a duré %d tours",
+
+    "reigns.player.creation": "Création du personnage...",
+    "reigns.player.creation.playername": "Entrez le nom du personnage:",
+    "reigns.player.creation.calling": "Comment faut-il vous appeler?",
+
+    "player.gender.king": "Roi",
+    "player.gender.king.text": "Long règne au roi",
+    "player.gender.queen": "Reine",
+    "player.gender.queen.text": "Long règne au roi",
+
+    "input.for": "%d pour %s",
+
+    "gaugetype.church": "Clergé",
+    "gaugetype.people": "Peuple",
+    "gaugetype.military": "Armée",
+    "gaugetype.economy": "Finances",
+
+    "effect.left": "Gauche",
+    "effect.right": "Droite",
+
+    "question1.text" : "Voulez vous offrir ce paysan en sacrifice"
+  }
+}
