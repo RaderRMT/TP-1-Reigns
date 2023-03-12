@@ -370,6 +370,52 @@
           "strength": -16
         }
       ]
+    },
+    {
+      "npcName": "Lucien",
+      "question": "question17.text",
+      "effects": [
+        {
+          "direction": "LEFT",
+          "affectedGauge": "PEOPLE",
+          "strength": 0
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "CHURCH",
+          "strength": 0
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ARMY",
+          "strength": 0
+        },
+        {
+          "direction": "LEFT",
+          "affectedGauge": "ECONOMY",
+          "strength": 0
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "PEOPLE",
+          "strength": -100
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "CHURCH",
+          "strength": -100
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "ARMY",
+          "strength": -100
+        },
+        {
+          "direction": "RIGHT",
+          "affectedGauge": "ECONOMY",
+          "strength": -100
+        }
+      ]
     }
   ]
 }
